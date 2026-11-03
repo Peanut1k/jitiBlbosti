@@ -1,0 +1,57 @@
+/* Výchozí vzhled a odsazení celého okna. */
+.root {
+    -fx-background-color: #f2effa;
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-padding: 28;
+}
+
+/* Vestavěná třída: platí pro všechny Label. */
+.label {
+    -fx-text-fill: #302645;
+}
+
+/* Vlastní třídy přiřazené ve FXML pomocí styleClass. */
+.nadpis {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.popisek {
+    -fx-font-size: 18px;
+}
+
+/* Konkrétní prvek s id="jmeno" ve FXML. */
+#jmeno {
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6639ad;
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 10 20;
+}
+
+.button {
+    -fx-background-color: #6639ad;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 12 26;
+}
+
+.button:hover {
+    -fx-background-color: #4e278d;
+}
+
+.button:focused {
+    -fx-border-color: #302645;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-border-insets: -4;
+}
+
+.drobny {
+    -fx-font-size: 13px;
+    -fx-text-fill: #665c77;
+}
