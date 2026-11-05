@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="cz.skola.losovatko.LosovatkoController"
-      alignment="CENTER" spacing="14.0">
+<VBox styleClass="window-root" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.skola.losovatko.LosovatkoController">
 
-    <Label text="Losovátko Jíti" styleClass="nadpis" />
-    <Label text="nejoblíbenější student(ka) Jíti je:"
-           styleClass="popisek" wrapText="true" />
+    <VBox spacing="12" styleClass="content-panel">
+        <Label styleClass="main-title" text="Pochvala pro učitele" />
+        <Label styleClass="subtitle" text="Losování z pěti učitelů" />
 
-    <!-- fx:id propojuje s Javou. id vybírá prvek v CSS pomocí #jmeno. -->
-    <Label fx:id="jmenoLabel" id="jmeno" text="......"
-           minHeight="82.0" maxWidth="Infinity" alignment="CENTER" />
+        <Button defaultButton="true" onAction="#losuj" prefWidth="200.0" styleClass="primary-button" text="Vylosovat učitele" />
 
-    <!-- #losuj je název metody v controlleru. -->
-    <Button text="Losuj!" onAction="#losuj" defaultButton="true"
-            prefWidth="200.0" />
+        <Label styleClass="section-label" text="Vylosovaný učitel" />
+        <Label id="jmeno" fx:id="jmenoLabel" alignment="CENTER" maxWidth="Infinity" minHeight="82.0" text="-----------------" />
 
-    <Label fx:id="pocetLabel" text="Počet losování: 0" styleClass="drobny" />
-    <Label text="Všech 14 jmen má stejnou šanci. Jméno se může opakovat."
-           styleClass="drobny" wrapText="true" maxWidth="420.0"
-           alignment="CENTER" textAlignment="CENTER" />
+        <Label styleClass="reason-header" text="Za co si zaslouží pochvalu?" />
+
+        <CheckBox fx:id="bereNasVazneCheck" selected="true" text="Bere nás vážně." />
+        <CheckBox fx:id="opraviBugCheck" text="Opraví bug bez „já vám to říkala“." />
+        <CheckBox fx:id="vysvetliCheck" selected="true" text="Vysvětlí to klidně i potřetí." />
+
+        <Button onAction="#udelitPochvalu" prefWidth="200.0" styleClass="primary-button, action-button" text="Udělit pochvalu" />
+
+        <VBox fx:id="oceneniBox" managed="true" spacing="10.0" styleClass="award-box" visible="true">
+            <Label styleClass="award-title" text="Udělené ocenění" />
+            <Label id="oceneniUvod" fx:id="oceneniUvod" styleClass="award-text" text="Jíťa si zaslouží ocenění." />
+            <VBox fx:id="dovodyBox" spacing="6.0">
+                <Label styleClass="odrazka" text="• Bere nás vážně." />
+                <Label styleClass="odrazka" text="• Vysvětlí to klidně i potřetí." />
+            </VBox>
+        </VBox>
+    </VBox>
 </VBox>

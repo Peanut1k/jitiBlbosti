@@ -1,35 +1,83 @@
 package cz.skola.losovatko;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class LosovatkoController {
 
-    // Stejné názvy jako fx:id ve FXML. Objekty doplní FXMLLoader.
     @FXML
     private Label jmenoLabel;
 
     @FXML
-    private Label pocetLabel;
+    private CheckBox bereNasVazneCheck;
+
+    @FXML
+    private CheckBox opraviBugCheck;
+
+    @FXML
+    private CheckBox vysvetliCheck;
+
+    @FXML
+    private VBox oceneniBox;
+
+    @FXML
+    private VBox dovodyBox;
 
     private final String[] jmena = {
-            "Mates", "Péťa", "Fanda", "Šáry", "Oli", "Ali", "Míra",
-            "Dan", "Marťas", "David", "Kája", "Pepa", "Martin", "Kornel"
+            "Danisikova", "Burda", "Belsky", "Abrham", "Samanova"
     };
 
     private final Random nahoda = new Random();
-    private int pocetLosovani = 0;
 
-    // Ve FXML tlačítko odkazuje na tuto metodu: onAction="#losuj".
+    @FXML
+    private void initialize() {
+        aktualizovatOceneni();
+    }
+
     @FXML
     private void losuj() {
-        // nextInt vrací index od 0 včetně do jmena.length bez této hranice.
         int index = nahoda.nextInt(jmena.length);
         jmenoLabel.setText(jmena[index]);
+    }
 
-        pocetLosovani++;
-        pocetLabel.setText("Počet losování: " + pocetLosovani);
+    @FXML
+    private void udelitPochvalu() {
+        aktualizovatOceneni();
+    }
+
+    private void aktualizovatOceneni() {
+        List<CheckBox> vybrane = new ArrayList<>();
+        if (bereNasVazneCheck.isSelected()) {
+            vybrane.add(bereNasVazneCheck);
+        }
+        if (opraviBugCheck.isSelected()) {
+            vybrane.add(opraviBugCheck);
+        }
+        if (vysvetliCheck.isSelected()) {
+            vybrane.add(vysvetliCheck);
+        }
+
+        String jmeno = jmenoLabel.getText();
+        String labelText = jmeno + " si zaslouží ocenění.";
+        Label uvod = (Label) oceneniBox.lookup("#oceneniUvod");
+        if (uvod != null) {
+            uvod.setText(labelText);
+        }
+
+        dovodyBox.getChildren().clear();
+        for (CheckBox box : vybrane) {
+            Label radek = new Label("• " + box.getText());
+            radek.getStyleClass().add("odrazka");
+            dovodyBox.getChildren().add(radek);
+        }
+
+        oceneniBox.setVisible(true);
+        oceneniBox.setManaged(true);
     }
 }

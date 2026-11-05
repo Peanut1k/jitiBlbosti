@@ -1,57 +1,143 @@
-/* Výchozí vzhled a odsazení celého okna. */
-.root {
-    -fx-background-color: #f2effa;
+.window-root {
+    -fx-background-color: #dfe5df;
     -fx-font-family: "Arial";
     -fx-font-size: 15px;
-    -fx-padding: 28;
 }
 
-/* Vestavěná třída: platí pro všechny Label. */
-.label {
-    -fx-text-fill: #302645;
+.title-bar {
+    -fx-background-color: #dfe5df;
+    -fx-padding: 8 14 8 14;
+    -fx-border-color: #b7b9b7;
+    -fx-border-width: 0 0 1 0;
+    -fx-alignment: center_left;
 }
 
-/* Vlastní třídy přiřazené ve FXML pomocí styleClass. */
-.nadpis {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-}
-
-.popisek {
+.window-title {
+    -fx-text-fill: #222a2a;
     -fx-font-size: 18px;
+    -fx-font-weight: bold;
 }
 
-/* Konkrétní prvek s id="jmeno" ve FXML. */
+.window-control {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #2d2d2d;
+    -fx-font-size: 20px;
+    -fx-padding: 2 10 2 10;
+}
+
+.window-control:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.06);
+}
+
+.content-panel {
+    -fx-background-color: #e7ece7;
+    -fx-padding: 16 18 14 18;
+}
+
+.main-title {
+    -fx-text-fill: #203f39;
+    -fx-font-size: 33px;
+    -fx-font-weight: 700;
+}
+
+.subtitle {
+    -fx-text-fill: #4a5452;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 6 0;
+}
+
+.primary-button {
+    -fx-background-color: #2b5c53;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #234d45;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #1c3f39;
+}
+
+.section-label {
+    -fx-text-fill: #1d2d2a;
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+    -fx-padding: 8 0 0 0;
+}
+
 #jmeno {
-    -fx-font-size: 42px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #6639ad;
+    -fx-background-color: #eff2ef;
+    -fx-background-radius: 10;
+    -fx-border-color: #d5d9d5;
+    -fx-border-width: 1;
+    -fx-padding: 18 12 18 12;
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1d2323;
+}
+
+.reason-header {
+    -fx-text-fill: #2f3837;
+    -fx-font-size: 16px;
+    -fx-padding: 8 0 0 0;
+}
+
+.check-box {
+    -fx-font-size: 15px;
+    -fx-text-fill: #2a352f;
+    -fx-padding: 2 0 2 0;
+}
+
+.check-box .box {
     -fx-background-color: white;
-    -fx-background-radius: 14;
-    -fx-padding: 10 20;
+    -fx-border-color: #8b9a93;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 3;
+    -fx-padding: 1;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #2b5c53;
+}
+
+.action-button {
+    -fx-padding: 12 20 12 20;
+    -fx-background-radius: 10;
+    -fx-font-size: 17px;
+}
+
+.award-box {
+    -fx-background-color: #d5e3d9;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16 12 16;
+    -fx-border-color: transparent;
+}
+
+.award-title {
+    -fx-text-fill: #234b42;
+    -fx-font-size: 23px;
+    -fx-font-weight: 700;
+}
+
+.award-text {
+    -fx-text-fill: #1d3732;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 6 0;
+}
+
+.odrazka {
+    -fx-text-fill: #1d3732;
+    -fx-font-size: 15px;
 }
 
 .button {
-    -fx-background-color: #6639ad;
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
     -fx-background-radius: 10;
-    -fx-padding: 12 26;
-}
-
-.button:hover {
-    -fx-background-color: #4e278d;
-}
-
-.button:focused {
-    -fx-border-color: #302645;
-    -fx-border-width: 2;
-    -fx-border-radius: 10;
-    -fx-border-insets: -4;
-}
-
-.drobny {
-    -fx-font-size: 13px;
-    -fx-text-fill: #665c77;
 }
