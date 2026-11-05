@@ -13,14 +13,14 @@ public class LosovatkoApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 LosovatkoApplication.class.getResource("losovatko-view.fxml"));
-        Scene scene = new Scene(loader.load(), 520, 760);;
+        Scene scene = new Scene(loader.load(), 1180, 760);
 
         scene.getStylesheets().add(
                 LosovatkoApplication.class.getResource("losovatko.css").toExternalForm());
 
         stage.setTitle("Ocenění pro učitele");
-        stage.setMinWidth(520);
-        stage.setMinHeight(750);
+        stage.setMinWidth(1180);
+        stage.setMinHeight(760);
         stage.setScene(scene);
         stage.show();
     }

@@ -1,43 +1,23 @@
 .window-root {
-    -fx-background-color: #dfe5df;
+    -fx-background-color: #dfe6df;
     -fx-font-family: "Arial";
     -fx-font-size: 15px;
+    -fx-padding: 0;
+    -fx-spacing: 0;
+    -fx-pref-width: 980;
+    -fx-pref-height: 700;
 }
 
-.title-bar {
-    -fx-background-color: #dfe5df;
-    -fx-padding: 8 14 8 14;
-    -fx-border-color: #b7b9b7;
-    -fx-border-width: 0 0 1 0;
-    -fx-alignment: center_left;
-}
-
-.window-title {
-    -fx-text-fill: #222a2a;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-}
-
-.window-control {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-text-fill: #2d2d2d;
-    -fx-font-size: 20px;
-    -fx-padding: 2 10 2 10;
-}
-
-.window-control:hover {
-    -fx-background-color: rgba(0, 0, 0, 0.06);
-}
-
-.content-panel {
-    -fx-background-color: #e7ece7;
-    -fx-padding: 16 18 14 18;
+.left-panel {
+    -fx-background-color: #e6ece6;
+    -fx-padding: 18 18 20 18;
+    -fx-spacing: 12;
+    -fx-pref-width: 580;
 }
 
 .main-title {
     -fx-text-fill: #203f39;
-    -fx-font-size: 33px;
+    -fx-font-size: 32px;
     -fx-font-weight: 700;
 }
 
@@ -104,7 +84,12 @@
 }
 
 .check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
     -fx-background-color: #2b5c53;
+    -fx-border-color: #2b5c53;
 }
 
 .action-button {
@@ -136,6 +121,75 @@
 .odrazka {
     -fx-text-fill: #1d3732;
     -fx-font-size: 15px;
+}
+
+.slot-panel {
+    -fx-background: linear-gradient(to bottom, #0d1d1d, #1b3836 38%, #0f2825 100%);
+    -fx-padding: 22 18 18 18;
+    -fx-spacing: 18;
+    -fx-alignment: center;
+    -fx-pref-width: 600;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 18, 0.2, 0, 0);
+}
+
+.slot-title {
+    -fx-text-fill: #f1e7a5;
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+}
+
+.slot-machine {
+    -fx-padding: 26 20 26 20;
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255, 215, 123, 0.7);
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 210, 90, 0.8), 22, 0.45, 0, 0);
+}
+
+.celebration-stage {
+    -fx-pref-width: 560;
+    -fx-pref-height: 300;
+    -fx-min-width: 560;
+    -fx-min-height: 300;
+    -fx-alignment: center;
+}
+
+.reel {
+    -fx-background-color: linear-gradient(to bottom, #fff9d6, #f2d76d);
+    -fx-background-radius: 12;
+    -fx-pref-width: 160;
+    -fx-min-width: 130;
+    -fx-pref-height: 190;
+    -fx-min-height: 190;
+    -fx-max-height: 190;
+    -fx-alignment: center;
+    -fx-border-color: rgba(94, 71, 10, 0.5);
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.reel-label {
+    -fx-font-size: 30px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1d1d1d;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.slot-subtitle {
+    -fx-text-fill: #d9f1dc;
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+}
+
+.slot-status {
+    -fx-text-fill: #ffe58a;
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(255, 207, 64, 0.9), 14, 0.6, 0, 0);
 }
 
 .button {
